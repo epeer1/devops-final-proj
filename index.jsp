@@ -2,7 +2,7 @@
 <%@ page import="java.util.Date" %>
 <html>
 <head>
-    <title>My Cool JSP App</title>
+    <title>My Cool JSP App - Final Project</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,10 +19,10 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 300px;
+            width: 400px;
         }
 
-        input[type=text], button {
+        input[type=text], input[type=email], button {
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -32,6 +32,7 @@
         .result {
             margin-top: 20px;
             font-weight: bold;
+            color: green;
         }
     </style>
 </head>
@@ -43,16 +44,21 @@
     <div class="form-container">
         <form method="post">
             Enter your name:<br/>
-            <input type="text" name="username" />
+            <input type="text" name="username" required />
+
+            Enter your email:<br/>
+            <input type="email" name="email" required />
+
             <button type="submit">Submit</button>
         </form>
 
         <% 
             String username = request.getParameter("username");
-            if (username != null && !username.trim().isEmpty()) {
+            String email = request.getParameter("email");
+            if (username != null && !username.trim().isEmpty() && email != null && !email.trim().isEmpty()) {
         %>
             <div class="result">
-                Hello, <%= username %>! 👋
+                Thank you, <%= username %>! We will contact you at <%= email %> 📧
             </div>
         <% 
             } 
