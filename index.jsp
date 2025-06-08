@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.Date" %>
 <html>
-    <%@ page import="java.util.Date" %>
 <head>
     <title>My Cool JSP App - Final Project</title>
     <style>
